@@ -1,0 +1,21 @@
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: .2rem;
+    height: 3px;
+  }
+  /* Light mode */
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-Soft-orange);
+    border-radius: 20px;
+  }
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-Grayish-blue);
+  }
+    /* Dark mode */
+  .dark .scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-Soft-orange);
+  }
+  .dark .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-500);
+  }
+}

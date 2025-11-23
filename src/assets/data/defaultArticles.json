@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "title": "The Bright Future of Web 3.0?",
+    "author": "Frontend Mentor",
+    "id": "1a",
+    "description": "We dive into the next evolution of the web that claims to put the power of the plataforms back into the hands of the people. But is it really fulfilling its promise?",
+    "source": "Frontend Mentor",
+    "published_at": "2025-11-18",
+    "url": "https://ssir.org/articles/entry/web3_and_the_trap_of_for_good",
+    "category": "default",
+    "image": "assets/image-web-3-desktop.jpg",
+    "imagemobile": "assets/image-web-3-mobile.jpg"
+  },
+  "new": [
+    {
+      "title": "Hydrogen VS Electric Cars",
+      "author": "Frontend Mentor",
+      "id": "2a1",
+      "description": "Will hydrogen-fueled cars ever catch up to EVs?",
+      "source": "Frontend Mentor",
+      "published_at": "2025-11-18",
+      "url": "https://www.edmunds.com/electric-car/articles/hydrogen-vs-electric-cars.html",
+      "category": "default",
+      "image": "assets/image-web-3-desktop.jpg"
+    },
+    {
+      "title": "The Downsides of AI Artistry",
+      "author": "Frontend Mentor",
+      "id": "2b2",
+      "description": "What are the possible adverse effects of on-demand AI image generation?",
+      "source": "Frontend Mentor",
+      "published_at": "2025-11-17",
+      "url": "https://aibubbleburst.com/why-ai-art-is-bad/",
+      "category": "default",
+      "image": ""
+    },
+    {
+      "title": "Is VC Funding Drying Up?",
+      "author": "Frontend Mentor",
+      "id": "2c3",
+      "description": "Private funding by VC firms is down 50% YOY. We take a look at what that means.",
+      "source": "Frontend Mentor",
+      "published_at": "2025-11-16",
+      "url": "https://www.fastcompany.com/90830822/vc-funding-is-drying-up-how-founders-can-fundraise-regardless",
+      "category": "default",
+      "image": ""
+    },
+    {
+      "title": "Boomtown: How Futuristic Weapons Could Power Albuquerque",
+      "author": "Sarah Scoles",
+      "id": "2d4",
+      "description": "Directed energy research is booming in Albuquerque as the Department of Defense pushes for operational reality.",
+      "source": "Truth Beauty Science. - Undark",
+      "published_at": "2025-11-19T08:02:00+00:00",
+      "url": "https://undark.org/2025/11/19/boomtown-albuquerque-directed-energy/",
+      "category": "science",
+      "image": "https://undark.org/wp-content/uploads/2025/11/Undark_UNMABQDirectedEnergy_079_lede.jpg"
+    }
+  ],
+  "trending": [
+    {
+      "title": "Reviving Retro PCs",
+      "author": "Tech Analyst",
+      "id": "3a5",
+      "description": "What happens when old PCs are given modern upgrades?",
+      "source": "TechCrunch",
+      "published_at": "2025-11-15",
+      "url": "https://techcrunch.com/metaverse-future",
+      "category": "technology",
+      "image": "assets/image-retro-pcs.jpg"
+    },
+    {
+      "title": "Top 10 Laptops 0f 2025",
+      "author": "Health Reporter",
+      "id": "3b6",
+      "description": "Our best picks for varios needs and budges.",
+      "source": "Google News Health GB",
+      "published_at": "2025-11-14",
+      "url": "https://healthnews.com/futuristic-ai-healthcare",
+      "category": "health",
+      "image": "assets/image-top-laptops.jpg"
+    },
+    {
+      "title": "The Growth of Gaming",
+      "author": "Security Weekly",
+      "id": "3c7",
+      "description": "How the pandemic has sparked fresh opportunities.",
+      "source": "The New York Times",
+      "published_at": "2025-11-13",
+      "url": "https://nytimes.com/cyberspace-security",
+      "category": "technology",
+      "image": "assets/image-gaming-growth.jpg"
+    }
+  ]
+}
