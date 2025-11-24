@@ -80,7 +80,7 @@ Build an application that consumes a public news API and displays headlines in a
 ## 🚀 Live Deploys
 
 - Solution URL: [code](https://github.com/devcjoha/app-news)
-- Live Site URL: [Deploy-Github-Pages]()
+- Live Site URL: [Deploy-Github-Pages](https://devcjoha.github.io/app-news/)
 
 
 ## My process
