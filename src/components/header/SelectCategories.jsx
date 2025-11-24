@@ -9,23 +9,23 @@ const SelectCategories = ({ categories, setFilter }) => {
     <>
       <div
         ref={ref}
-        className="select-categories-container relative text-Dark-gray-sh-blue dark:text-Grayish-blue"
+        className="select-categories-container relative text-Dark-gray-sh-blue dark:text-Grayish-blue cursor-pointer"
       >
         <div
           onClick={() => setOpen(!open)}
           className={`categories-button-nav flex  items-center justify-between`}
         >
-          <span className="flex flex-row gap-3">
+          <span className="flex flex-row gap-3 hover:text-Soft-red">
             Categories
             <img
               src={dropIcon}
               alt="icon-dropdwon"
-              className="icon-dropdown invert dark:invert-0 opacity-70"
+              className="icon-dropdown invert dark:invert-0 opacity-50"
             />
           </span>
         </div>
         {open && (
-          <ul className="options-categories absolute w-full lg:text-center dark:bg-gray-800 bg-neutral-50 z-10 cursor-pointer ">
+          <ul className="options-categories absolute lg:w-41 w-full  dark:bg-gray-800 bg-Off-white z-10 cursor-pointer shadow-2xl">
             {/* Mapear las categorías */}
             {categories.map((category) => (
               <li
@@ -34,7 +34,7 @@ const SelectCategories = ({ categories, setFilter }) => {
                   setFilter(category.key);
                   setOpen(false);
                 }}
-                className="p-2 hover:dark:bg-neutral-600 rounded-b-lg hover:bg-neutral-200 cursor-pointer"
+                className="p-2 pl-5 hover:dark:bg-neutral-600 hover:bg-neutral-200 cursor-pointer"
               >
                 {category.name}
               </li>

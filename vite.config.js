@@ -14,5 +14,17 @@ export default defineConfig({
     tailwindcss(),
     tailwindcss/postcss(),
   ],
+   build: {
+    // activa minificación y hashing
+    manifest: true,
+    rollupOptions: {
+      output: {
+        // nombres con hash para JS/CSS
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
+      }
+    }
+  },
   base: "/app-news/"
 })

@@ -9,7 +9,7 @@ import CardNew from "../components/cards/CardNew";
 import CardTrending from "../components/cards/CardTrending";
 
 function Home({ handleToggle, darkMode, setDarkMode }) {
-  const { error, loading } = useArticles();
+  const { errorType, errorMessages, loading } = useArticles();
 
   const categoryImages = {
     health: imageHealth,
@@ -25,16 +25,31 @@ function Home({ handleToggle, darkMode, setDarkMode }) {
   };
   return (
     <>
-      <section className="home-container flex flex-col items-center lg:w-286 w-screen lg:pt-15 p-5 min-h-screen">
+      <section className="home-container flex flex-col items-center lg:w-286 w-screen lg:pt-8 p-5 min-h-screen">
+        {errorType && (
+          <div
+            role="alert"
+            aria-live="assertive"
+            className="text-red-800 flex items-center"
+            >
+            <p className="text-red-700 text-size-16">
+              {errorMessages[errorType]}
+            </p>
+            <button
+              onClick={() => window.location.reload()}
+              className="ml-4 underline text-sm"
+              >
+              Retry
+            </button>
+          </div>
+        )}
         <Header
           handleToggle={handleToggle}
           darkMode={darkMode}
           setDarkMode={setDarkMode}
-        ></Header>
+          ></Header>
 
-        {loading && <p>Loading...</p>}
-        {error && <p className="text-red-700 text-size-16">{error}</p>}
-
+          {loading && <p>Loading...</p>}
         {/* SECTIONS CONTAINER */}
         <div className="sections-container lg:w-full flex flex-col lg:h-180 w-85 items-center">
           {/* HERO NEW CONTAINER */}

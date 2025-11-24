@@ -5,10 +5,8 @@ function CardHero({ getImage }) {
 
   const heroArticle = articles[0];
 
-  if (!heroArticle) return <p>Loading...</p>;
-
   return (
-    <div className="card-hero-container w-full lg:w-180 mb-16 flex flex-col justify-between">
+    <section className="card-hero-container w-full lg:w-180 mb-16 flex flex-col justify-between">
       {heroArticle.category === "default" ? (
         <div className="hero-image-container bg-cover w-full h-74 bg-[url(assets/images/image-web-3-mobile.jpg)] lg:bg-[url(assets/images/image-web-3-desktop.jpg)] "></div>
       ) : (
@@ -27,8 +25,8 @@ function CardHero({ getImage }) {
       {/* TITLE TEXT CONTAINER */}
       <div className="hero-text-container flex lg:flex-row flex-col mt-7 justify-between">
         {/* TITLE */}
-        <div className="title-hero-conatiner w-80">
-          <h3 className="hero-title lg:mb-0 mb-5 text-Very-dark-blue dark:text-Off-white text-font-primary capital lg:leading-13 lg:text-size-48 text-size-40 font-extrabold line-clamp-3 leading-10 ">
+        <div className="title-hero-conatiner w-80 mb-3">
+          <h3 className="hero-title lg:mb-0 lg:pb-2 pb-1 text-Very-dark-blue dark:text-Off-white text-font-primary capital lg:leading-13 lg:text-size-48 text-size-40 font-extrabold line-clamp-3 leading-10 ">
             {heroArticle.title}
           </h3>
         </div>
@@ -43,7 +41,7 @@ function CardHero({ getImage }) {
             <span className="font-bold"> # {heroArticle.category}</span>
           </p>
           <a
-            className="hero-link-url flex items-center w-49 bg-Soft-red text-Very-dark-blue font-bold text-[.89em] tracking-[.3rem] "
+            className="hero-link-url flex items-center w-49 bg-Soft-red text-Very-dark-blue font-bold text-[.89em] tracking-[.3rem] hover:dark:bg-Off-white hover:dark:text-Very-dark-blue hover:bg-Very-dark-blue hover:text-Off-white focus:ring-2 focus:ring-Soft-red focus:ring-offset-2"
             href={heroArticle.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -54,7 +52,7 @@ function CardHero({ getImage }) {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 export default CardHero;

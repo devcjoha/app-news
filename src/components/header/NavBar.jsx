@@ -27,7 +27,7 @@ function NavBar({
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row gap-6 lg:p-0 p-8">
+    <div className="flex flex-col lg:flex-row gap-6 lg:p-0 p-8 ">
       {/* Filtros principales */}
       {FILTERS.map((filter) => (
         <a

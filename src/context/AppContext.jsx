@@ -15,8 +15,15 @@ export function ArticlesProvider({ children }) {
   const [trendingArticles, setTrendingArticles] = useState([]);
   const [popularArticles, setPopularArticles] = useState([]);
 
-  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [errorType, setErrorType] = useState(null);
+
+  const errorMessages = {
+    noData: "No items are available at this time.",
+    network: "Could not connect to the server. Check your connection.",
+    invalidData: "The data received is invalid.",
+    unexpected: "An unexpected error has occurred. Please try again.",
+  };
 
   useEffect(() => {
     // carga de datos
@@ -24,11 +31,12 @@ export function ArticlesProvider({ children }) {
 
     try {
       if (!mockArticles || !mockArticles.length) {
-        setError(true); // Si no hay datos, marcamos error
+        setErrorType("noData");
         setLoading(false);
         return;
       }
 
+      setErrorType(null); // sin error
       // Hero: artículo más reciente
       const latest = mockArticles.reduce(
         (acc, cur) =>
@@ -38,7 +46,14 @@ export function ArticlesProvider({ children }) {
       setNewArticle(latest);
 
       // Trending: por palabras clave
-      const keywords = ["cyberspace", "metaverse", "futuristic", "retro", "laptops", "gaming"];
+      const keywords = [
+        "cyberspace",
+        "metaverse",
+        "futuristic",
+        "retro",
+        "laptops",
+        "gaming",
+      ];
       setTrendingArticles(
         mockArticles.filter((a) =>
           keywords.some((k) => a.title?.toLowerCase().includes(k))
@@ -54,13 +69,15 @@ export function ArticlesProvider({ children }) {
       setPopularArticles(
         mockArticles.filter((a) => popularSources.includes(a.source))
       );
-
-      setError(false);
+      setErrorType(null);
     } catch (err) {
-      setError(true);
-      err.message("Error al ")
+      if (err.name === "TypeError") {
+        setErrorType("network");
+      } else {
+        setErrorType("unexpected");
+      }
     } finally {
-      setLoading(false); 
+      setLoading(false);
     }
   }, [mockArticles]);
 
@@ -73,7 +90,7 @@ export function ArticlesProvider({ children }) {
         ...defaultArticles.trending,
       ];
     }
-    if (filter === "new" && newArticle) return [newArticle] ;
+    if (filter === "new" && newArticle) return [newArticle];
     if (filter === "trending") return trendingArticles;
     if (filter === "popular") return popularArticles;
 
@@ -84,7 +101,14 @@ export function ArticlesProvider({ children }) {
 
     // Fallback: mostrar todo el mock si el filtro no coincide
     return mockArticles || [];
-  }, [filter, mockArticles, newArticle, trendingArticles, popularArticles]);
+  }, [
+    filter,
+    mockArticles,
+    newArticle,
+    trendingArticles,
+    popularArticles,
+    defaultArticles,
+  ]);
 
   return (
     <ArticlesContext.Provider
@@ -93,8 +117,9 @@ export function ArticlesProvider({ children }) {
         setFilter,
         articles: articlesToShow,
         loading,
-        error,
-        defaultArticles
+        defaultArticles,
+        errorType,
+        errorMessages,
       }}
     >
       {children}
@@ -104,4 +129,4 @@ export function ArticlesProvider({ children }) {
 
 export function useArticles() {
   return useContext(ArticlesContext);
-};
+}
